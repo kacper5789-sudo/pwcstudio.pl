@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Website Creator | Strony internetowe dla firm</title>
-  <meta name="description" content="Professional Website Creator — nowoczesne strony internetowe dla firm usługowych, lokalnych marek, salonów, myjni, wypożyczalni i branż premium." />
+  <title>Realizacje | PWC Studio</title>
+  <meta name="description" content="Portfolio PWC Studio — realizacje stron internetowych dla firm lokalnych, marek usługowych, beauty, automotive, eventów, podróży i wypożyczalni." />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -273,23 +273,6 @@
     }
     .hero-socials img{width:24px;height:24px}
     .email-btn{width:auto!important;padding:0 18px;gap:9px;color:#dce6f2;font-size:14px;font-weight:850}
-    .hero-proof{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
-      pointer-events:auto;
-    }
-    .hero-proof span{
-      padding:9px 12px;
-      border-radius:999px;
-      background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.18);
-      color:#e8f2ff;
-      font-size:13px;
-      font-weight:850;
-      backdrop-filter:blur(8px);
-    }
 
     section{padding:92px 0}
     .head{text-align:center;margin-bottom:46px}
@@ -345,6 +328,7 @@
     .project:hover .project-shot img{transform:scale(1.025)}
     .project-body{padding:24px}
     .project h3{font-size:26px;letter-spacing:-.035em;margin-bottom:6px}
+    .project-type{margin:0 0 11px;color:var(--blue2);font-size:12px;font-weight:950;letter-spacing:.12em;text-transform:uppercase}
     .project p{color:#c9d2df}
     .tags{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 17px}
     .tag{
@@ -399,46 +383,6 @@
     }
     .card h3{font-size:21px;margin-bottom:8px}
     .card p{color:var(--muted)}
-
-
-    .trust-stats{
-      padding:26px 0 8px;
-    }
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-    .stat-card{
-      padding:22px 20px;
-      border:1px solid rgba(65,182,255,.20);
-      border-radius:22px;
-      background:linear-gradient(180deg,rgba(20,149,255,.10),rgba(255,255,255,.018));
-      box-shadow:0 18px 55px rgba(0,0,0,.24);
-    }
-    .stat-card strong{
-      display:block;
-      font-size:clamp(34px,4vw,54px);
-      line-height:1;
-      letter-spacing:-.055em;
-      color:#fff;
-      margin-bottom:7px;
-    }
-    .stat-card span{
-      color:#b8c7d9;
-      font-size:13px;
-      font-weight:850;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-    .project-type{
-      margin:0 0 11px;
-      color:var(--blue2);
-      font-size:12px;
-      font-weight:950;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
 
     .process{
       display:grid;
@@ -575,32 +519,6 @@
     }
     .about-box p{color:var(--muted);margin-top:12px}
 
-    .faq-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-    .faq-item{
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
-      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-    }
-    .faq-item h3{font-size:20px;margin-bottom:10px}
-    .faq-item p{color:var(--muted)}
-    .faq-item.strong{
-      border-color:rgba(65,182,255,.48);
-      background:linear-gradient(180deg,rgba(20,149,255,.13),rgba(255,255,255,.025));
-      box-shadow:0 24px 70px rgba(20,149,255,.10);
-    }
-    .faq-item.strong p{color:#e7f4ff;font-weight:850}
-
-    .faq-grid .faq-item:last-child:nth-child(odd){
-      grid-column:1 / -1;
-      width:min(100%, calc(50% - 8px));
-      justify-self:center;
-    }
-
     .cta{
       text-align:center;
       border:1px solid rgba(65,182,255,.22);
@@ -623,8 +541,7 @@
     @media(max-width:1000px){
       .menu{display:none}
       .mobile-menu{display:block}
-      .projects,.cards,.process,.pricing,.about,.faq-grid,.stats-grid{grid-template-columns:1fr}
-      .faq-grid .faq-item:last-child:nth-child(odd){grid-column:auto;width:100%;justify-self:stretch}
+      .projects,.cards,.process,.pricing,.about{grid-template-columns:1fr}
       .project:first-child,.project.project-wide{grid-column:span 1}
       .project-shot{height:310px}
       .hero-art{background-size:cover;opacity:.75}
@@ -656,30 +573,33 @@
       .hero-logo-track img{width:170px}
       .hero-logo-track{gap:38px}
     }
-  </style>
+  
+    .subpage-hero{padding:110px 0 70px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 20% 0%,rgba(20,149,255,.17),transparent 36%),rgba(255,255,255,.02)}
+    .subpage-hero h1{max-width:1100px;font-size:clamp(36px,4.8vw,64px);line-height:1.05;letter-spacing:-.055em;text-transform:none;margin-bottom:18px;white-space:nowrap}
+    .subpage-hero p{max-width:780px;color:#d5deea;font-size:18px}
+    .all-projects .project:first-child{grid-column:span 2}
+</style>
 </head>
 <body id="top">
   <header>
     <div class="container nav">
-      <a class="brand logo-brand" href="#top" aria-label="Professional Website Creator"><img src="assets/logo.png" alt="Professional Website Creator logo"></a>
+      <a class="brand logo-brand" href="index.html" aria-label="Professional Website Creator"><img src="assets/logo.png" alt="Professional Website Creator logo"></a>
       <nav class="menu">
         <a href="realizacje.html">Realizacje</a>
-        <a href="#proces">Proces</a>
-        <a href="#omnie">O mnie</a>
-        <a href="#oferta">Oferta</a>
-        <a href="#faq">FAQ</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="index.html#proces">Proces</a>
+        <a href="index.html#omnie">O mnie</a>
+        <a href="index.html#oferta">Oferta</a>
+        <a href="index.html#kontakt">Kontakt</a>
       </nav>
       <div class="actions">
         <details class="mobile-menu">
           <summary class="hamburger" aria-label="Otwórz menu">☰</summary>
           <div class="mobile-panel">
             <a href="realizacje.html">Realizacje</a>
-            <a href="#proces">Proces</a>
-            <a href="#omnie">O mnie</a>
-            <a href="#oferta">Oferta</a>
-            <a href="#faq">FAQ</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="index.html#proces">Proces</a>
+            <a href="index.html#omnie">O mnie</a>
+            <a href="index.html#oferta">Oferta</a>
+            <a href="index.html#kontakt">Kontakt</a>
           </div>
         </details>
         <a class="icon-btn" href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
@@ -688,53 +608,25 @@
       </div>
     </div>
   </header>
-
   <main>
-    <section class="hero">
-      <div class="hero-art"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-logo-marquee" aria-hidden="true">
-        <div class="hero-logo-track">
-          <img src="assets/logo.png" alt="">
-          <img src="assets/logo.png" alt="">
-          <img src="assets/logo.png" alt="">
-          <img src="assets/logo.png" alt="">
-          <img src="assets/logo.png" alt="">
-          <img src="assets/logo.png" alt="">
-        </div>
-      </div>
-      <div class="hero-content hero-clean-actions">
-        <h1 class="sr-only">Profesjonalne strony internetowe dla firm, które zamieniają odwiedzających w klientów</h1>
-        <div class="hero-buttons">
-          <a class="btn primary" href="realizacje.html">Zobacz realizacje</a>
-          <a class="btn ghost" href="tel:+48789389126">Zadzwoń: 789 389 126</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
-          <a href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank" aria-label="Facebook"><img src="assets/facebook.svg" alt="Facebook"></a>
-          <a class="email-btn" href="mailto:kacper@pwcstudio.pl">✉ kacper@pwcstudio.pl</a>
-        </div>
-        <div class="hero-proof">
-          <span>✓ Strony gotowe nawet w 3–7 dni</span>
-          <span>✓ Projekt • Kod • SEO • Wdrożenie</span>
-        </div>
+
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="label">Portfolio</div>
+        <h1>Realizacje PWC Studio</h1>
+        <p>Pełne portfolio realizacji przygotowanych dla różnych branż — beauty, podróżników, eventów, automotive, lakierni, myjni i wypożyczalni.</p>
       </div>
     </section>
 
     <section id="realizacje">
       <div class="container">
-        <div class="head">
-          <div class="label">Realizacje</div>
-          <h2>Strony stworzone dla prawdziwych firm.</h2>
-          <p>Każdy projekt tworzę indywidualnie — dopasowując wygląd, funkcje i komunikację do branży klienta. Zobacz kilka realizacji lub przejdź do pełnego portfolio.</p>
-        </div>
-        <div class="projects featured-projects">
+        <div class="projects all-projects">
           <article class="project">
             <div class="project-shot"><img src="assets/hairhouse.png" alt="Hair House"></div>
             <div class="project-body">
               <h3>Hair House</h3>
               <div class="project-type">Strona internetowa • Beauty</div>
-              <p>Premium salon beauty dla Wierzbicy i Iłży — elegancki wizerunek, oferta usług, zespół, cennik i szybki kontakt.</p>
+              <p><strong>Cel:</strong> elegancka wizytówka online dla salonu beauty w Wierzbicy i Iłży — usługi, zespół, cennik, kontakt i lokalne SEO.</p>
               <div class="tags"><span class="tag">beauty</span><span class="tag">lokalne SEO</span><span class="tag">cennik</span></div>
               <a href="https://hairhousesalon.pl" target="_blank">Otwórz projekt →</a>
             </div>
@@ -745,7 +637,7 @@
             <div class="project-body">
               <h3>Irbis Travel & Adventure</h3>
               <div class="project-type">Portal społecznościowy • Travel & Adventure</div>
-              <p>Platforma dla społeczności podróżniczej z interaktywną mapą świata, galerią wypraw, panelem użytkownika oraz możliwością publikowania własnych historii i zdjęć.</p>
+              <p><strong>Cel:</strong> platforma dla społeczności podróżniczej z interaktywną mapą świata, galerią wypraw, panelem użytkownika oraz możliwością publikowania własnych historii i zdjęć.</p>
               <div class="tags"><span class="tag">podróże</span><span class="tag">panel użytkownika</span><span class="tag">galeria</span></div>
               <a href="https://irbistraveladventure.vercel.app/" target="_blank">Otwórz projekt →</a>
             </div>
@@ -756,9 +648,20 @@
             <div class="project-body">
               <h3>Doskonałe Wydarzenie</h3>
               <div class="project-type">Strona ofertowa • Eventy</div>
-              <p>Strona eventowa zaprojektowana pod wynajem namiotów i zaplecza imprezowego — oferta, realizacje i szybki kontakt.</p>
+              <p><strong>Cel:</strong> przejrzysta oferta eventowa — wynajem zaplecza imprezowego, realizacje i szybka ścieżka kontaktu.</p>
               <div class="tags"><span class="tag">eventy</span><span class="tag">wynajem</span><span class="tag">szybki kontakt</span></div>
               <a href="https://doskonalewydarzenie.vercel.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/cryu.png" alt="Cryu Industries"></div>
+            <div class="project-body">
+              <h3>Cryu Industries</h3>
+              <div class="project-type">Szofer • Transport premium</div>
+              <p><strong>Cel:</strong> premium prezentacja floty, usług chauffeur service i aut ślubnych w eleganckim stylu marki.</p>
+              <div class="tags"><span class="tag">premium transport</span><span class="tag">flota</span><span class="tag">auta ślubne</span></div>
+              <a href="https://cryuindustries.vercel.app/" target="_blank">Otwórz projekt →</a>
             </div>
           </article>
 
@@ -767,164 +670,53 @@
             <div class="project-body">
               <h3>Front-Lak Color Space</h3>
               <div class="project-type">Strona firmowa • Produkcja MDF</div>
-              <p>Cel: techniczna oferta lakierowani MDF i frontów meblowych pokazana w nowoczesnym, czytelnym stylu.</p>
+              <p><strong>Cel:</strong> techniczna oferta lakierowani MDF i frontów meblowych pokazana w nowoczesnym, czytelnym stylu.</p>
               <div class="tags"><span class="tag">MDF</span><span class="tag">fronty meblowe</span><span class="tag">lakierowanie</span></div>
               <a href="https://front-lak.bolt.host/" target="_blank">Otwórz projekt →</a>
             </div>
           </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/artix.png" alt="Artix Auto Detailing"></div>
+            <div class="project-body">
+              <h3>Artix Auto Detailing</h3>
+              <div class="project-type">Strona usługowa • Automotive</div>
+              <p><strong>Cel:</strong> prezentacja usług detailingu, mycia ręcznego i czyszczenia wnętrz z naciskiem na zaufanie oraz szybki kontakt.</p>
+              <div class="tags"><span class="tag">detailing</span><span class="tag">czyszczenie wnętrz</span><span class="tag">auto care</span></div>
+              <a href="https://artix-auto-detailing.vercel.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/mbk.png" alt="MBK Car Wash"></div>
+            <div class="project-body">
+              <h3>MBK Car Wash</h3>
+              <div class="project-type">Strona lokalna • Myjnia</div>
+              <p><strong>Cel:</strong> prosta, konkretna strona dla myjni samochodowej — oferta usług, prezentacja marki i kontakt.</p>
+              <div class="tags"><span class="tag">myjnia</span><span class="tag">szybki kontakt</span><span class="tag">auto usługi</span></div>
+              <a href="https://mbk-car-wash-premium-zuxx.bolt.host/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/magraf.png" alt="MAG-RAF Wypożyczalnia"></div>
+            <div class="project-body">
+              <h3>MAG-RAF Wypożyczalnia</h3>
+              <div class="project-type">Strona ofertowa • Wypożyczalnia</div>
+              <p><strong>Cel:</strong> uporządkowanie oferty wypożyczalni przyczep, sprzętu ogrodniczego i budowlanego wraz z przejrzystym cennikiem.</p>
+              <div class="tags"><span class="tag">wypożyczalnia</span><span class="tag">cennik online</span><span class="tag">sprzęt</span></div>
+              <a href="https://mag-raf-wypozyczalnia--kacper5789.replit.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
         </div>
         <div class="portfolio-more">
-          <p>To tylko część portfolio. Na osobnej podstronie znajdziesz więcej realizacji z różnych branż.</p>
-          <a class="btn ghost" href="realizacje.html">Pokaż wszystkie projekty →</a>
+          <p>Masz firmę w innej branży? Układ strony dobieram indywidualnie do Twojej oferty, klientów i stylu marki. Standardowe realizacje tworzę zazwyczaj w 3–7 dni.</p>
+          <a class="btn primary" href="index.html#kontakt">Stwórzmy podobny projekt →</a>
         </div>
       </div>
     </section>
 
-    <section id="proces">
-      <div class="container">
-        <div class="head">
-          <div class="label">Proces</div>
-          <h2>Prosto, konkretnie, bez chaosu.</h2>
-          <p>Od pierwszej rozmowy do gotowej strony online — przejrzysty proces, bez technicznego chaosu. Standardowe realizacje zamykam zazwyczaj w 3–7 dni.</p>
-        </div>
-        <div class="process">
-          <div class="step">
-            <h3>Analiza firmy</h3>
-            <p>Poznaję Twoją branżę, ofertę i klientów. Na tej podstawie przygotowuję kierunek strony oraz układ, który ma realnie wspierać sprzedaż.</p>
-            <div class="step-list"><span>branża i cel</span><span>oferta i kontakt</span><span>kierunek wizualny</span></div>
-          </div>
-          <div class="step">
-            <h3>Projekt i budowa</h3>
-            <p>Tworzę stronę dopasowaną do Twoich klientów — z odpowiednim stylem, treściami, sekcjami, galerią i mocnym pierwszym wrażeniem.</p>
-            <div class="step-list"><span>indywidualny projekt</span><span>wersja mobile</span><span>sekcje sprzedażowe</span></div>
-          </div>
-          <div class="step">
-            <h3>Publikacja w 3–7 dni</h3>
-            <p>Gotowa strona trafia online. Pomagam z publikacją, domeną i przygotowaniem strony do pokazania klientom w Google oraz social mediach.</p>
-            <div class="step-list"><span>szybkie wdrożenie</span><span>podpięcie domeny</span><span>gotowa do reklamy</span></div>
-          </div>
-          <div class="step">
-            <h3>Wsparcie po wdrożeniu</h3>
-            <p>Po publikacji nie zostajesz sam. Pomagam przy poprawkach, nowych zdjęciach, aktualizacji treści i dalszej rozbudowie strony.</p>
-            <div class="step-list"><span>poprawki</span><span>aktualizacje</span><span>rozwój strony</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="omnie">
-      <div class="container">
-        <div class="head">
-          <div class="label">O mnie</div>
-          <h2>Strony tworzone pod konkretny biznes.</h2>
-        </div>
-        <p class="about-intro">Cześć, jestem Kacper 👋 Tworzę PWC Studio — projekt, w którym łączę design, kodowanie i nowe technologie, aby pomagać firmom budować profesjonalny wizerunek online.</p>
-        <div class="about">
-          <div class="about-box">
-            <h3>Co tworzę?</h3>
-            <p>Projektuję strony dla lokalnych firm, marek usługowych i biznesów, które chcą wyglądać dobrze online — nie tylko „mieć stronę”, ale zbudować zaufanie od pierwszego wejścia.</p>
-            <p>Najczęściej pracuję z branżami takimi jak beauty, podróżnicy, automotive, eventy, wypożyczalnie, detailing, transport premium, firmy usługowe i lokalne marki.</p>
-            <h4>Moje podejście</h4>
-            <p>Nie korzystam z gotowych schematów. Każdą stronę dopasowuję do branży, klientów i charakteru konkretnej firmy, tak żeby była czytelna, nowoczesna i nastawiona na kontakt.</p>
-          </div>
-          <div class="about-box">
-            <h3>Co może zawierać strona?</h3>
-            <p>Zakres dobieram do branży i celu strony. Może to być prosta wizytówka, rozbudowana oferta albo bardziej efektowna strona z galerią i dodatkowymi sekcjami.</p>
-            <div class="about-list">
-              <span>Oferta usług</span>
-              <span>Galeria realizacji</span>
-              <span>Cennik</span>
-              <span>Mapa Google</span>
-              <span>Opinie klientów</span>
-              <span>Social media</span>
-              <span>Pracownicy</span>
-              <span>Publikacja online</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="oferta">
-      <div class="container">
-        <div class="head">
-          <div class="label">Oferta</div>
-          <h2>Pakiety cenowe</h2>
-        </div>
-        <div class="pricing">
-          <div class="price-card">
-            <h3>Start</h3>
-            <div class="price">1499 zł</div>
-            <p>Dla nowych firm, które potrzebują profesjonalnej wizytówki online.</p>
-            <ul><li>Strona one-page</li><li>Oferta i kontakt</li><li>Wersja mobilna</li><li>Podstawowe SEO</li><li>Publikacja online</li></ul>
-          </div>
-          <div class="price-card featured">
-            <h3>Business</h3>
-            <div class="price">2499 zł</div>
-            <p>Dla firm usługowych, które chcą lepiej prezentować ofertę i zdobywać zapytania.</p>
-            <ul><li>Wszystko ze Start</li><li>Kilka sekcji lub podstron</li><li>Galeria realizacji</li><li>Opinie klientów i mapa Google</li><li>SEO lokalne</li></ul>
-          </div>
-          <div class="price-card">
-            <h3>Premium</h3>
-            <div class="price">3999 zł+</div>
-            <p>Pełny wizerunek online dla marki, która chce wyglądać mocno i premium.</p>
-            <ul><li>Indywidualny projekt premium</li><li>Pełne teksty sprzedażowe</li><li>Cennik / pracownicy / rozbudowane sekcje</li><li>Animacje i dopracowane detale</li><li>Priorytetowe wsparcie</li></ul>
-          </div>
-        </div>
-        <div class="note"><strong>Domena i hosting:</strong> klient może mieć stronę na darmowym adresie platformy. Jeżeli chce własną domenę, konfiguruję ją płatnie razem z kosztem rejestracji domeny.</div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <div class="head">
-          <div class="label">FAQ</div>
-          <h2>Najczęstsze pytania</h2>
-          <p>Krótko i konkretnie — zanim napiszesz, wiesz czego możesz się spodziewać.</p>
-        </div>
-        <div class="faq-grid">
-          <div class="faq-item strong">
-            <h3>Ile trwa stworzenie strony?</h3>
-            <p>Zazwyczaj 3–7 dni zależnie od projektu. To jedna z moich najmocniejszych stron — działam szybko, konkretnie i bez przeciągania.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Czy pomagasz z domeną?</h3>
-            <p>Tak. Pomagam uruchomić stronę online, podłączyć domenę i przygotować ją do reklamy lub publikacji w social mediach.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Czy strona działa na telefonach?</h3>
-            <p>Tak. Każdy projekt przygotowuję responsywnie, żeby wyglądał dobrze na telefonie, tablecie i komputerze.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Czy muszę znać się na stronach?</h3>
-            <p>Nie. Przeprowadzę Cię przez cały proces — od pomysłu, przez projekt, aż po publikację.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Czy mogę później coś zmienić?</h3>
-            <p>Tak. Po wdrożeniu mogę pomóc przy poprawkach, aktualizacjach treści, nowych zdjęciach lub rozbudowie strony.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt">
-      <div class="container">
-        <div class="cta">
-          <div class="label">Kontakt</div>
-          <h2>Stwórzmy Twoją stronę</h2>
-          <p class="lead">Masz firmę i chcesz wyglądać profesjonalnie online? Napisz do mnie — sprawdzimy najlepsze rozwiązanie.</p>
-          <div class="hero-buttons" style="justify-content:center">
-            <a class="btn primary" href="tel:+48789389126">☎ 789 389 126</a>
-            <a class="btn ghost" href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank">Instagram</a>
-            <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank">Facebook</a>
-            <a class="btn ghost" href="mailto:kacper@pwcstudio.pl">✉ kacper@pwcstudio.pl</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
-
   <footer>
     <div class="container footer-inner">
       <div>© 2026 Professional Website Creator</div>
