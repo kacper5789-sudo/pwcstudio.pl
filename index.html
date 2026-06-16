@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Website Creator | Strony internetowe dla firm</title>
+  <meta name="description" content="Professional Website Creator — nowoczesne strony internetowe dla firm usługowych, lokalnych marek, salonów, myjni, wypożyczalni i branż premium." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>
+    :root{
+      --bg:#02050a;
+      --bg2:#07101c;
+      --panel:#0b111d;
+      --panel2:#101826;
+      --text:#f7f9fc;
+      --muted:#aeb8c7;
+      --blue:#1495ff;
+      --blue2:#41b6ff;
+      --gold:#f4c766;
+      --line:rgba(255,255,255,.12);
+      --shadow:0 28px 90px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(20,149,255,.16), transparent 34%),
+        radial-gradient(circle at 90% 10%, rgba(244,199,102,.10), transparent 30%),
+        linear-gradient(180deg,#03060b,#050a12 46%,#03050a);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(1220px,92%);margin:auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(3,6,11,.80);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+    .brand{
+      font-weight:950;
+      letter-spacing:-.045em;
+      line-height:.95;
+      font-size:24px;
+    }
+    .brand span{
+      display:block;
+      color:var(--blue2);
+      font-size:13px;
+      letter-spacing:.04em;
+      margin-top:3px;
+    }
+    .logo-brand{
+      display:flex;
+      align-items:center;
+      width:174px;
+      max-width:42vw;
+    }
+    .logo-brand img{
+      width:100%;
+      height:auto;
+      display:block;
+      filter:drop-shadow(0 10px 24px rgba(0,0,0,.45));
+    }
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#c8d2df;
+      font-weight:900;
+    }
+    .menu a:hover{color:#fff}
+    .mobile-menu{display:none}
+    .mobile-menu summary{list-style:none;cursor:pointer}
+    .mobile-menu summary::-webkit-details-marker{display:none}
+    .hamburger{
+      width:43px;height:43px;
+      display:grid;place-items:center;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-size:22px;
+      font-weight:900;
+      line-height:1;
+    }
+    .mobile-panel{
+      position:absolute;
+      top:calc(100% + 10px);
+      right:0;
+      width:min(260px,86vw);
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(5,10,18,.97);
+      box-shadow:0 22px 60px rgba(0,0,0,.55);
+      backdrop-filter:blur(18px);
+    }
+    .mobile-panel a{
+      display:block;
+      padding:13px 14px;
+      border-radius:12px;
+      color:#d8e1ee;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      font-size:12px;
+      font-weight:900;
+    }
+    .mobile-panel a:hover{background:rgba(255,255,255,.07);color:#fff}
+    .actions{display:flex;align-items:center;gap:10px;position:relative}
+    .icon-btn{
+      width:43px;height:43px;
+      display:grid;place-items:center;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.06);
+    }
+    .icon-btn img{width:25px;height:25px}
+    .call{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:43px;
+      padding:0 16px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--blue2),var(--blue));
+      color:white;
+      font-weight:950;
+      box-shadow:0 16px 46px rgba(20,149,255,.25);
+      white-space:nowrap;
+    }
+
+    .hero{
+      position:relative;
+      min-height:calc(100vh - 82px);
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:#05090f;
+    }
+    .hero-art{
+      position:absolute;
+      inset:0;
+      background:url("assets/hero-final.png") center center / contain no-repeat;
+      filter:saturate(1.04) contrast(1.03);
+      transform:scale(.98);
+    }
+    .hero-shade{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(2,5,10,.88) 0%,rgba(2,5,10,.56) 34%,rgba(2,5,10,.25) 68%,rgba(2,5,10,.72) 100%),
+        linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.42));
+      pointer-events:none;
+    }
+    .hero-logo-marquee{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:22px;
+      z-index:2;
+      overflow:hidden;
+      pointer-events:none;
+      opacity:.22;
+      mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    }
+    .hero-logo-track{
+      display:flex;
+      align-items:center;
+      gap:90px;
+      width:max-content;
+      animation:logoSlide 28s linear infinite;
+    }
+    .hero-logo-track img{
+      width:320px;
+      height:auto;
+      flex:0 0 auto;
+      filter:drop-shadow(0 12px 28px rgba(0,0,0,.65));
+    }
+    @keyframes logoSlide{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
+    .hero-content{
+      position:relative;
+      z-index:3;
+      width:min(1220px,92%);
+      margin:auto;
+      padding:86px 0;
+    }
+    .hero-clean-actions{
+      min-height:calc(100vh - 82px);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      align-items:flex-Strona główna;
+      padding-bottom:58px;
+      pointer-events:none;
+    }
+    .hero-clean-actions .hero-buttons,
+    .hero-clean-actions .hero-socials{pointer-events:auto;}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 14px;
+      border:1px solid rgba(65,182,255,.35);
+      border-radius:999px;
+      background:rgba(4,12,22,.56);
+      backdrop-filter:blur(10px);
+      color:var(--blue2);
+      font-weight:950;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:26px;
+    }
+    .dot{width:7px;height:7px;border-radius:99px;background:var(--blue2);box-shadow:0 0 18px var(--blue2)}
+    h1{
+      max-width:760px;
+      font-size:clamp(39px,5.5vw,78px);
+      line-height:.97;
+      letter-spacing:-.06em;
+      text-transform:uppercase;
+      margin-bottom:22px;
+    }
+    h1 span{color:var(--blue2)}
+    .lead{
+      max-width:650px;
+      color:#d5deea;
+      font-size:18px;
+      margin-bottom:30px;
+    }
+    .hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:15px 22px;
+      border-radius:13px;
+      font-weight:950;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:var(--blue);color:white;box-shadow:0 18px 50px rgba(20,149,255,.28)}
+    .btn.ghost{border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.24);backdrop-filter:blur(8px);color:white}
+    .hero-socials{display:flex;gap:12px;margin-top:26px}
+    .hero-socials a{
+      width:46px;height:46px;
+      border-radius:999px;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.17);
+    }
+    .hero-socials img{width:24px;height:24px}
+    .email-btn{width:auto!important;padding:0 18px;gap:9px;color:#dce6f2;font-size:14px;font-weight:850}
+
+    section{padding:92px 0}
+    .head{text-align:center;margin-bottom:46px}
+    .label{
+      color:var(--blue2);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:950;
+      margin-bottom:12px;
+    }
+    h2{
+      font-size:clamp(34px,5vw,58px);
+      line-height:1.03;
+      letter-spacing:-.055em;
+    }
+    .head p{color:var(--muted);max-width:780px;margin:16px auto 0}
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+    .project{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      overflow:hidden;
+      box-shadow:0 22px 70px rgba(0,0,0,.34);
+    }
+    .project:first-child{grid-column:span 2}
+    .project.project-wide{grid-column:span 2}
+    .project-shot{
+      height:410px;
+      overflow:hidden;
+      background:#05070c;
+      border-bottom:1px solid var(--line);
+    }
+    .project-shot img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:top center;
+      transition:.35s ease;
+    }
+    .project.project-wide .project-shot{
+      height:auto;
+      aspect-ratio:1672 / 941;
+    }
+    .project.project-wide .project-shot img{
+      object-fit:cover;
+    }
+    .project:hover .project-shot img{transform:scale(1.025)}
+    .project-body{padding:24px}
+    .project h3{font-size:26px;letter-spacing:-.035em;margin-bottom:6px}
+    .project p{color:#c9d2df}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 17px}
+    .tag{
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(20,149,255,.10);
+      border:1px solid rgba(65,182,255,.22);
+      color:#d8efff;
+      font-weight:850;
+    }
+    .project a{
+      color:var(--blue2);
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      padding:26px;
+      border-radius:22px;
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      border:1px solid var(--line);
+    }
+    .card .num{
+      width:48px;height:48px;
+      border-radius:999px;
+      display:grid;place-items:center;
+      background:rgba(20,149,255,.10);
+      border:1px solid rgba(65,182,255,.22);
+      color:var(--blue2);
+      font-weight:950;
+      margin-bottom:18px;
+    }
+    .card h3{font-size:21px;margin-bottom:8px}
+    .card p{color:var(--muted)}
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      counter-reset:step;
+    }
+    .step{
+      counter-increment:step;
+      text-align:center;
+      padding:24px;
+    }
+    .step:before{
+      content:counter(step);
+      width:72px;height:72px;
+      display:grid;place-items:center;
+      margin:0 auto 18px;
+      border-radius:999px;
+      color:var(--blue2);
+      background:rgba(20,149,255,.10);
+      border:1px solid rgba(65,182,255,.22);
+      font-size:26px;
+      font-weight:950;
+    }
+    .step p{color:var(--muted);font-size:14px;margin-top:8px}
+    .step-list{
+      margin-top:14px;
+      display:grid;
+      gap:8px;
+      color:#d5deea;
+      font-size:13px;
+      text-align:left;
+    }
+    .step-list span{
+      display:flex;
+      gap:8px;
+      align-items:flex-Strona główna;
+      padding:8px 10px;
+      border-radius:12px;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .step-list span:before{
+      content:"✓";
+      color:var(--blue2);
+      font-weight:950;
+      flex:0 0 auto;
+    }
+    .about-intro{
+      max-width:860px;
+      margin:0 auto 30px;
+      text-align:center;
+      color:#d5deea;
+      font-size:18px;
+    }
+    .about-box h4{
+      margin-top:20px;
+      margin-bottom:8px;
+      color:#fff;
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+    }
+    .about-list{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+    .about-list span{
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(20,149,255,.08);
+      border:1px solid rgba(65,182,255,.18);
+      color:#d8efff;
+      font-size:14px;
+      font-weight:850;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .price-card{
+      position:relative;
+      padding:30px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+    }
+    .price-card.featured{
+      border-color:rgba(65,182,255,.55);
+      box-shadow:0 0 0 1px rgba(20,149,255,.14),0 24px 70px rgba(20,149,255,.10);
+    }
+    .price-card.featured:before{
+      content:"Najpopularniejszy";
+      position:absolute;
+      top:-15px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--blue2);
+      color:#02050a;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:12px;
+      font-weight:950;
+    }
+    .price-card h3{text-transform:uppercase;font-size:24px}
+    .price{font-size:38px;font-weight:950;margin:18px 0}
+    .price-card p{color:var(--muted)}
+    ul{list-style:none;display:grid;gap:10px;margin-top:20px;color:#d5deea}
+    li:before{content:"✓";color:var(--blue2);font-weight:950;margin-right:10px}
+    .note{
+      margin-top:22px;
+      border:1px solid rgba(65,182,255,.22);
+      background:rgba(20,149,255,.07);
+      border-radius:20px;
+      padding:20px;
+      color:#d7e2ef;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:Strona główna;
+    }
+    .about-box{
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:30px;
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+    }
+    .about-box p{color:var(--muted);margin-top:12px}
+
+    .cta{
+      text-align:center;
+      border:1px solid rgba(65,182,255,.22);
+      border-radius:32px;
+      padding:52px 28px;
+      background:
+        radial-gradient(circle at 20% 30%,rgba(20,149,255,.18),transparent 30%),
+        radial-gradient(circle at 78% 25%,rgba(244,199,102,.08),transparent 26%),
+        rgba(255,255,255,.035);
+      box-shadow:var(--shadow);
+    }
+    .cta .lead{margin:16px auto 26px}
+    footer{
+      border-top:1px solid var(--line);
+      padding:34px 0;
+      color:var(--muted);
+    }
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    @media(max-width:1000px){
+      .menu{display:none}
+      .mobile-menu{display:block}
+      .projects,.cards,.process,.pricing,.about{grid-template-columns:1fr}
+      .project:first-child,.project.project-wide{grid-column:span 1}
+      .project-shot{height:310px}
+      .hero-art{background-size:cover;opacity:.75}
+    }
+    @media(max-width:660px){
+      .nav{min-height:64px;padding:10px 0;gap:10px}
+      .logo-brand{width:96px;max-width:30vw}
+      .actions{gap:5px;margin-left:auto;justify-content:flex-end}
+      .actions .icon-btn{display:grid;width:34px;height:34px;border-radius:11px;flex:0 0 34px}
+      .actions .icon-btn img{width:20px;height:20px}
+      .actions .icon-btn[aria-label="Instagram"]{order:1}
+      .actions .icon-btn[aria-label="Facebook"]{order:2}
+      .call{order:3;min-height:34px;width:34px;border-radius:11px;font-size:0;padding:0;flex:0 0 34px}
+      .call::before{content:'☎';font-size:15px;line-height:1}
+      .mobile-menu{order:4}
+      .hamburger{width:36px;height:36px;border-radius:11px;font-size:19px}
+      .mobile-panel{top:calc(100% + 8px);right:0}
+      .hero{min-height:calc(100vh - 64px)}
+      .hero-clean-actions{min-height:calc(100vh - 64px);padding-bottom:34px}
+      .hero-content{padding:48px 0}
+      .hero-buttons{gap:10px}
+      .btn{width:100%;padding:14px 16px}
+      .hero-socials{gap:9px}
+      .hero-socials a:not(.email-btn){width:40px;height:40px}
+      .email-btn{min-height:40px;font-size:12px;padding:0 12px}
+      .project-shot{height:250px}
+      .hero-logo-marquee{bottom:110px;opacity:.13}
+      .hero-logo-track img{width:170px}
+      .hero-logo-track{gap:38px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand logo-brand" href="#Strona główna" aria-label="Professional Website Creator"><img src="assets/logo.png" alt="Professional Website Creator logo"></a>
+      <nav class="menu">
+        <a href="#realizacje">Realizacje</a>
+        <a href="#proces">Proces</a>
+        <a href="#omnie">O mnie</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="actions">
+        <details class="mobile-menu">
+          <summary class="hamburger" aria-label="Otwórz menu">☰</summary>
+          <div class="mobile-panel">
+            <a href="#realizacje">Realizacje</a>
+            <a href="#proces">Proces</a>
+            <a href="#omnie">O mnie</a>
+            <a href="#oferta">Oferta</a>
+            <a href="#kontakt">Kontakt</a>
+          </div>
+        </details>
+        <a class="icon-btn" href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
+        <a class="icon-btn" href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank" aria-label="Facebook"><img src="assets/facebook.svg" alt="Facebook"></a>
+        <a class="call" href="tel:+48789389126">☎ 789 389 126</a>
+      </div>
+    </div>
+  </header>
+
+    <section class="hero">
+      <div class="hero-art"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-logo-marquee" aria-hidden="true">
+        <div class="hero-logo-track">
+          <img src="assets/logo.png" alt="">
+          <img src="assets/logo.png" alt="">
+          <img src="assets/logo.png" alt="">
+          <img src="assets/logo.png" alt="">
+          <img src="assets/logo.png" alt="">
+          <img src="assets/logo.png" alt="">
+        </div>
+      </div>
+      <div class="hero-content hero-clean-actions">
+        <div class="hero-buttons">
+          <a class="btn primary" href="#realizacje">Zobacz realizacje</a>
+          <a class="btn ghost" href="tel:+48789389126">Zadzwoń: 789 389 126</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
+          <a href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank" aria-label="Facebook"><img src="assets/facebook.svg" alt="Facebook"></a>
+          <a class="email-btn" href="mailto:kacper@pwcstudio.pl">✉ kacper@pwcstudio.pl</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="realizacje">
+      <div class="container">
+        <div class="head">
+          <div class="label">Realizacje</div>
+          <h2>Projekty, które pokazują jakość.</h2>
+          <p>Oryginalne screeny stron przygotowanych dla różnych branż — od beauty i eventów po automotive, wypożyczalnie i usługi premium.</p>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-shot"><img src="assets/hairhouse.png" alt="Hair House"></div>
+            <div class="project-body">
+              <h3>Hair House</h3>
+              <p>Salony Beauty Fryzjersko Kosmetyczny<br>Miejsce, gdzie piękno spotyka się z profesjonalizmem.<br>„Twoje piękno — nasza pasja.”</p>
+              <div class="tags"><span class="tag">beauty</span><span class="tag">cennik</span><span class="tag">zespół</span></div>
+              <a href="https://hairhousesalon.pl" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project project-wide">
+            <div class="project-shot"><img src="assets/irbis.png" alt="Irbis Travel & Adventure"></div>
+            <div class="project-body">
+              <h3>Irbis Travel & Adventure</h3>
+              <p>Strona dla społeczności podróżniczej z interaktywną mapą świata i prezentacją odwiedzonych miejsc.</p>
+              <div class="tags"><span class="tag">podróże</span><span class="tag">interaktywna mapa</span><span class="tag">adventure</span></div>
+              <a href="https://irbistraveladventure.vercel.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/doskonale.png" alt="Doskonałe Wydarzenie"></div>
+            <div class="project-body">
+              <h3>Doskonałe Wydarzenie</h3>
+              <p>Wynajem namiotów i zaplecza eventowego.</p>
+              <div class="tags"><span class="tag">eventy</span><span class="tag">realizacje</span></div>
+              <a href="https://doskonalewydarzenie.vercel.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/frontlak.png" alt="Front-Lak Color Space"></div>
+            <div class="project-body">
+              <h3>Front-Lak Color Space</h3>
+              <p>Lakierowanie MDF i frontów meblowych.</p>
+              <div class="tags"><span class="tag">MDF</span><span class="tag">lakiernia</span></div>
+              <a href="https://front-lak.bolt.host/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/artix.png" alt="Artix Auto Detailing"></div>
+            <div class="project-body">
+              <h3>Artix Auto Detailing</h3>
+              <p>Auto detailing i myjnia samochodowa.</p>
+              <div class="tags"><span class="tag">detailing</span><span class="tag">automotive</span></div>
+              <a href="https://artix-auto-detailing.vercel.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/cryu.png" alt="CryuIndustries"></div>
+            <div class="project-body">
+              <h3>CryuIndustries</h3>
+              <p>Premium chauffeur service i wynajem aut ślubnych.</p>
+              <div class="tags"><span class="tag">premium</span><span class="tag">flota</span></div>
+              <a href="https://cryuindustries.vercel.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/mbk.png" alt="MBK Car Wash"></div>
+            <div class="project-body">
+              <h3>MBK Car Wash</h3>
+              <p>Profesjonalna myjnia samochodowa.</p>
+              <div class="tags"><span class="tag">myjnia</span><span class="tag">kontakt</span></div>
+              <a href="https://mbk-car-wash-premium-zuxx.bolt.host/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-shot"><img src="assets/magraf.png" alt="MAG-RAF Wypożyczalnia"></div>
+            <div class="project-body">
+              <h3>MAG-RAF Wypożyczalnia</h3>
+              <p>Wypożyczalnia przyczep, sprzętu ogrodniczego i budowlanego.</p>
+              <div class="tags"><span class="tag">wypożyczalnia</span><span class="tag">cennik</span></div>
+              <a href="https://mag-raf-wypozyczalnia--kacper5789.replit.app/" target="_blank">Otwórz projekt →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces">
+      <div class="container">
+        <div class="head">
+          <div class="label">Proces</div>
+          <h2>Prosto, konkretnie, bez chaosu.</h2>
+          <p>Od pierwszej rozmowy do gotowej strony online — przejrzysty proces, bez technicznego chaosu i zbędnego przeciągania.</p>
+        </div>
+        <div class="process">
+          <div class="step">
+            <h3>Rozmowa</h3>
+            <p>Poznaję firmę, branżę, ofertę i cel strony. Ustalamy, co ma się pojawić oraz jaki efekt ma dawać strona.</p>
+            <div class="step-list"><span>oferta i branża</span><span>zdjęcia, logo, kontakt</span><span>cel strony i grupa klientów</span></div>
+          </div>
+          <div class="step">
+            <h3>Projekt</h3>
+            <p>Dobieram styl, kolorystykę, układ sekcji i klimat wizualny dopasowany do charakteru Twojej marki.</p>
+            <div class="step-list"><span>indywidualny wygląd</span><span>układ pod sprzedaż usług</span><span>pierwsze mocne wrażenie</span></div>
+          </div>
+          <div class="step">
+            <h3>Realizacja</h3>
+            <p>Buduję stronę, dodaję treści, galerie, opinie, mapy i wszystkie elementy potrzebne do kontaktu z klientem.</p>
+            <div class="step-list"><span>wersja desktop i mobile</span><span>sekcje sprzedażowe</span><span>dopracowane detale</span></div>
+          </div>
+          <div class="step">
+            <h3>Publikacja</h3>
+            <p>Pomagam uruchomić stronę online, podłączyć domenę i przygotować ją do pokazania klientom.</p>
+            <div class="step-list"><span>publikacja online</span><span>podpięcie domeny</span><span>gotowa strona do reklamy</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="omnie">
+      <div class="container">
+        <div class="head">
+          <div class="label">O mnie</div>
+          <h2>Strony tworzone pod konkretny biznes.</h2>
+        </div>
+        <p class="about-intro">Tworzę nowoczesne strony internetowe dla firm, które chcą profesjonalnie prezentować swoje usługi, budować zaufanie i ułatwiać klientom szybki kontakt.</p>
+        <div class="about">
+          <div class="about-box">
+            <h3>Co tworzę?</h3>
+            <p>Projektuję strony dla lokalnych firm, marek usługowych i biznesów, które chcą wyglądać dobrze online — nie tylko „mieć stronę”, ale robić lepsze pierwsze wrażenie.</p>
+            <p>Najczęściej pracuję z branżami takimi jak beauty, automotive, eventy, wypożyczalnie, detailing, transport premium i lokalne usługi.</p>
+            <h4>Moje podejście</h4>
+            <p>Każdy projekt dopasowuję do konkretnej firmy. Dobieram styl, sekcje i układ tak, żeby strona była czytelna, nowoczesna i nastawiona na kontakt od klienta.</p>
+          </div>
+          <div class="about-box">
+            <h3>Co może zawierać strona?</h3>
+            <p>Zakres dobieram do branży i celu strony. Może to być prosta wizytówka, rozbudowana oferta albo bardziej efektowna strona z galerią i dodatkowymi sekcjami.</p>
+            <div class="about-list">
+              <span>Oferta usług</span>
+              <span>Galeria realizacji</span>
+              <span>Cennik</span>
+              <span>Mapa Google</span>
+              <span>Opinie klientów</span>
+              <span>Social media</span>
+              <span>Pracownicy</span>
+              <span>Publikacja online</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta">
+      <div class="container">
+        <div class="head">
+          <div class="label">Oferta</div>
+          <h2>Pakiety cenowe</h2>
+        </div>
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Basic</h3>
+            <div class="price">999 zł</div>
+            <p>Idealna strona wizytówka dla małej firmy.</p>
+            <ul><li>Strona one-page</li><li>Oferta i kontakt</li><li>Wersja mobilna</li><li>Publikacja online</li></ul>
+          </div>
+          <div class="price-card featured">
+            <h3>Business</h3>
+            <div class="price">1999 zł</div>
+            <p>Rozbudowana strona dla firmy usługowej.</p>
+            <ul><li>Rozbudowane sekcje</li><li>Galeria realizacji</li><li>Opinie i mapa</li><li>Podstawowe SEO lokalne</li></ul>
+          </div>
+          <div class="price-card">
+            <h3>Premium</h3>
+            <div class="price">2999 zł+</div>
+            <p>Indywidualny projekt dla wymagających.</p>
+            <ul><li>Pełne teksty sprzedażowe</li><li>Cennik / pracownicy</li><li>Zaawansowany layout</li><li>Priorytetowe wsparcie</li></ul>
+          </div>
+        </div>
+        <div class="note"><strong>Domena i hosting:</strong> klient może mieć stronę na darmowym adresie platformy. Jeżeli chce własną domenę, konfiguruję ją płatnie razem z kosztem rejestracji domeny.</div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="cta">
+          <div class="label">Kontakt</div>
+          <h2>Gotowy na stronę, która przyciąga klientów?</h2>
+          <p class="lead">Napisz do mnie lub zadzwoń — porozmawiajmy o Twoim projekcie.</p>
+          <div class="hero-buttons" style="justify-content:center">
+            <a class="btn primary" href="tel:+48789389126">☎ 789 389 126</a>
+            <a class="btn ghost" href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank">Instagram</a>
+            <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank">Facebook</a>
+            <a class="btn ghost" href="mailto:kacper@pwcstudio.pl">✉ kacper@pwcstudio.pl</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Professional Website Creator</div>
+      <div>Telefon: 789 389 126</div>
+    </div>
+  </footer>
+</body>
+</html>
