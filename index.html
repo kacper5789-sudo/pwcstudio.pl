@@ -656,7 +656,100 @@
       .hero-logo-track img{width:170px}
       .hero-logo-track{gap:38px}
     }
-  </style>
+  
+
+    /* JARVIS v6.2 — mobile clarity fixes */
+    @media(max-width:660px){
+      .hero{
+        min-height:calc(88vh - 64px);
+        align-items:flex-end;
+      }
+      .hero-art{
+        background-size:cover;
+        background-position:center top;
+        opacity:.9;
+      }
+      .hero-shade{
+        background:
+          linear-gradient(180deg,rgba(2,5,10,.08) 0%,rgba(2,5,10,.20) 42%,rgba(2,5,10,.82) 100%),
+          linear-gradient(90deg,rgba(2,5,10,.42),rgba(2,5,10,.18),rgba(2,5,10,.48));
+      }
+      .hero-clean-actions{
+        min-height:calc(88vh - 64px);
+        justify-content:flex-end;
+        padding-bottom:18px;
+      }
+      .hero-content{
+        padding:28px 0 18px;
+      }
+      .hero-buttons{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+      }
+      .hero-buttons .btn{
+        width:100%;
+        padding:12px 10px;
+        min-height:44px;
+        border-radius:12px;
+        font-size:13px;
+        white-space:nowrap;
+      }
+      .hero-buttons .btn.ghost{
+        font-size:0;
+      }
+      .hero-buttons .btn.ghost::after{
+        content:'Zadzwoń';
+        font-size:13px;
+      }
+      .hero-socials{
+        width:100%;
+        margin-top:10px;
+        justify-content:center;
+        gap:8px;
+      }
+      .hero-socials a:not(.email-btn){
+        width:36px;
+        height:36px;
+      }
+      .hero-socials img{
+        width:20px;
+        height:20px;
+      }
+      .email-btn{
+        min-height:36px;
+        padding:0 10px;
+        font-size:11px;
+        max-width:210px;
+      }
+      .hero-proof{
+        display:none;
+      }
+      .hero-logo-marquee{
+        display:none;
+      }
+      .projects{
+        grid-template-columns:1fr;
+      }
+      .project,
+      .project:first-child,
+      .project.project-wide{
+        grid-column:auto!important;
+      }
+      .project-shot,
+      .project.project-wide .project-shot{
+        height:auto;
+        aspect-ratio:16 / 10;
+      }
+      .project-shot img,
+      .project.project-wide .project-shot img{
+        object-fit:cover;
+        object-position:top center;
+      }
+    }
+
+</style>
 </head>
 <body id="top">
   <header>
