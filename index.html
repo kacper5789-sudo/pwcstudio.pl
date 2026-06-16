@@ -613,6 +613,35 @@
       box-shadow:var(--shadow);
     }
     .cta .lead{margin:16px auto 26px}
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+    .contact-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.055);
+      color:#eef7ff;
+      font-weight:850;
+      text-decoration:none;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .contact-link.primary{
+      background:linear-gradient(135deg,var(--blue),#66caff);
+      border-color:transparent;
+      color:#04101a;
+      box-shadow:0 18px 46px rgba(20,149,255,.22);
+    }
     footer{
       border-top:1px solid var(--line);
       padding:34px 0;
@@ -655,6 +684,21 @@
       .hero-logo-marquee{bottom:110px;opacity:.13}
       .hero-logo-track img{width:170px}
       .hero-logo-track{gap:38px}
+      .contact-links{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+        margin-top:22px;
+      }
+      .contact-link,
+      .contact-link.primary{
+        width:100%;
+        min-height:48px;
+        border-radius:16px;
+        padding:0 16px;
+        font-size:15px;
+      }
     }
   
 
@@ -1007,11 +1051,11 @@
           <div class="label">Kontakt</div>
           <h2>Stwórzmy Twoją stronę</h2>
           <p class="lead">Masz firmę i chcesz wyglądać profesjonalnie online? Napisz do mnie — sprawdzimy najlepsze rozwiązanie.</p>
-          <div class="hero-buttons" style="justify-content:center">
-            <a class="btn primary" href="tel:+48789389126">☎ 789 389 126</a>
-            <a class="btn ghost" href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank">Instagram</a>
-            <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank">Facebook</a>
-            <a class="btn ghost" href="mailto:kacper@pwcstudio.pl">✉ kacper@pwcstudio.pl</a>
+          <div class="contact-links">
+            <a class="contact-link primary" href="tel:+48789389126">☎ 789 389 126</a>
+            <a class="contact-link" href="https://www.instagram.com/pro.fessionalwebsitecreator/" target="_blank">Instagram</a>
+            <a class="contact-link" href="https://www.facebook.com/profile.php?id=61590457272142" target="_blank">Facebook</a>
+            <a class="contact-link" href="mailto:kacper@pwcstudio.pl">✉ kacper@pwcstudio.pl</a>
           </div>
         </div>
       </div>
